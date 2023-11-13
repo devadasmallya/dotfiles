@@ -1,22 +1,28 @@
 set nocompatible
 filetype off
 
-" install Vundle from here https://github.com/VundleVim/Vundle.vim#quick-start
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'bling/vim-airline'
 
-Plugin 'airblade/vim-gitgutter'
-
-Plugin 'tpope/vim-fugitive'
+" Indent Guides is a plugin for visually displaying indent levels in Vim.
+Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'aolab/vim-avro'
+" Fuzzy finder
+Plugin 'junegunn/fzf'
 
-Plugin 'godlygeek/tabular'
+" Auto pairs
+Plugin 'jiangmiao/auto-pairs'
+
+" Git Gutter
+Plugin 'airblade/vim-gitgutter'
+
+" Rails
+Plugin 'tpope/vim-rails'
 
 call vundle#end() 
 
@@ -31,6 +37,7 @@ set ruler
 
 " Search highlights
 set hlsearch
+
 " Perform incremental searches
 set incsearch
 set ignorecase
@@ -40,11 +47,9 @@ set smartcase
 set path+=**
 set wildmenu
 
+
 " clear search pattern
 :nmap <C-x> :let @/ = ""<CR>
-
-" format json like a bauss
-:nmap <C-j> :%!python -m json.tool<CR>
 
 " Python support
 syntax on
